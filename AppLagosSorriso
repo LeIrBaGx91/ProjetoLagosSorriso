@@ -62,5 +62,3 @@ fun LoginScreen() {
         }
     }
 }
-
-// Para complementar, você pode criar a tela de agendamento, cadastro de pacientes e relatórios em arquivos separados.
