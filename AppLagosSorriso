@@ -62,3 +62,87 @@ fun LoginScreen() {
         }
     }
 }
+
+// Tela de Agendamento
+@Composable
+fun AgendamentoScreen() {
+    var nomePaciente by remember { mutableStateOf("") }
+    var dataConsulta by remember { mutableStateOf("") }
+
+    Column(modifier = Modifier.padding(24.dp)) {
+        Text("Agendar Consulta", style = MaterialTheme.typography.headlineMedium)
+        Spacer(modifier = Modifier.height(16.dp))
+        OutlinedTextField(
+            value = nomePaciente,
+            onValueChange = { nomePaciente = it },
+            label = { Text("Nome do Paciente") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        OutlinedTextField(
+            value = dataConsulta,
+            onValueChange = { dataConsulta = it },
+            label = { Text("Data da Consulta") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(onClick = {
+            // Salvar agendamento
+        }, modifier = Modifier.fillMaxWidth()) {
+            Text("Agendar")
+        }
+    }
+}
+
+// Tela de Cadastro de Pacientes
+@Composable
+fun CadastroPacienteScreen() {
+    var nome by remember { mutableStateOf("") }
+    var telefone by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+
+    Column(modifier = Modifier.padding(24.dp)) {
+        Text("Cadastro de Paciente", style = MaterialTheme.typography.headlineMedium)
+        Spacer(modifier = Modifier.height(16.dp))
+        OutlinedTextField(
+            value = nome,
+            onValueChange = { nome = it },
+            label = { Text("Nome") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        OutlinedTextField(
+            value = telefone,
+            onValueChange = { telefone = it },
+            label = { Text("Telefone") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        OutlinedTextField(
+            value = email,
+            onValueChange = { email = it },
+            label = { Text("Email") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(onClick = {
+            // Salvar paciente
+        }, modifier = Modifier.fillMaxWidth()) {
+            Text("Cadastrar")
+        }
+    }
+}
+
+// Tela de Relatórios
+@Composable
+fun RelatoriosScreen() {
+    Column(modifier = Modifier.padding(24.dp)) {
+        Text("Relatórios", style = MaterialTheme.typography.headlineMedium)
+        Spacer(modifier = Modifier.height(16.dp))
+        Text("Consultas realizadas: 24")
+        Spacer(modifier = Modifier.height(8.dp))
+        Text("Pacientes cadastrados: 15")
+        Spacer(modifier = Modifier.height(8.dp))
+        Text("Consultas pendentes: 3")
+    }
+}
